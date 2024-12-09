@@ -1,4 +1,4 @@
-## CSU-WIFI-AutoLogin
+# CSU-WIFI-AutoLogin
 在Windows系统下，自动（一键）登录中南大学校园网，保持校园网登录态。
 可以选择，或者设置定时任务。
 
