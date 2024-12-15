@@ -1,4 +1,6 @@
+import os
 import time
+
 from portal import login, unbind, logout
 from read_json import get_config
 
@@ -10,3 +12,4 @@ time.sleep(3)
 logout()
 time.sleep(3)
 login(username=username, password=password, net_type=net_type)
+os.system("pause")

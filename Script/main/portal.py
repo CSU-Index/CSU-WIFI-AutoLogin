@@ -1,24 +1,9 @@
 import requests
-from windows_toasts import WindowsToaster, Toast, ToastDuration
-import re
-from read_json import get_config
 
+from read_json import get_config
 
 var1, var2, var3, should_notify = get_config()
 
-
-def send_notification(title):
-    if should_notify:
-        # Prepare the toaster for bread (or your notification)
-        toaster = WindowsToaster('CSU-WIFI-AutoLogin')
-        # Initialise the toast
-        notification = Toast()
-        # Set the body of the notification
-        notification.text_fields = [title]
-        # And display it!
-        # Set the duration of the notification
-        notification.duration = ToastDuration.Short
-        toaster.show_toast(notification)
 
 
 # 加载页面设置信息
@@ -56,7 +41,7 @@ def login(username, password, net_type):
     url = f'https://portal.csu.edu.cn:802/eportal/portal/login?user_account={user_account}&user_password={password}'
     response = requests.get(url)
     if """{"result":1,"msg":"Portal协议认证成功！"}""" in response.text:
-        send_notification('Portal协议认证成功！')
+        print('Portal协议认证成功！')
     print(response.text)
 
 
